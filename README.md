@@ -25,23 +25,23 @@ Source for answer : https://docs.microsoft.com/en-us/azure/machine-learning/conc
 
 SCREENSHOTS OF TASKS ACCOMPLISHED:
 
-(1) screenshot of 'Bank-Marketing' dataset present in 'Registered Dataset' section of Azure ML Studio.
+(1) screenshot of 'Bank-Marketing' dataset present in 'Registered Dataset' section of Azure ML Studio. Dataset contains the data about different characteristics of customers of a bank (e.g. marital status, job specification, age, previous loan, defaulting status, education qualifications etc.) and 'y' label column answers wheather a customer applied for a fixed term deposit. This 'y' label column is used as target column in the auto-ml classification experiment. However, as discussed above, this dataset is imbalanced i.e. the inputs of one class of label is way more than other class of label.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/registered_datasets.PNG)
 
-(2) screenshot of completed experiment.
+(2) screenshot of completed experiment. Auto-ml classification (without enabling deep learning) task is run on the given dataset. The exit criterion which was 3 hours by default was changed to 1 hour so that experiment is completed within a given frame of time. Also, 'Application Insights' were not enabled.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/experiment_completed.PNG)
 
-(3) screenshot of best model produced by the experiment i.e. VotingEnsemble with 0.91775 Accuracy.
+(3) screenshot of best model produced by the experiment i.e. VotingEnsemble with 0.91775 Accuracy. VotingEnsemble is an ensemble model which combines multiple models to improve machine learning results. It does so by predicting output on the weighted average of predicted class probabilities.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/best_experiment.PNG)
 
-(4) screenshot showing enabled 'Application insights' in Details tab of Endpoint.
+(4) screenshot showing enabled 'Application insights' in Details tab of Endpoint. After deploying the best model i.e. VotingEnsemble (with enabled 'Authentication') with the help of Azure Container Instance (ACI), config.json was downloaded and kept in the same folder as logs.py. Then, logs.py was edited with the help of vim command in git bash terminal and deployment name was entered. Afterwards, logs.py script was run using python command and 'Application Insights Enabled' was then observed to be 'True'.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/applications_insights_enabled.PNG)
 
-(5) screenshots of logs
+(5) screenshots of logs. After running the logs.py script, no error tracebacks in its execution was observed in the git bash terminal and 'Application Insights' of our deployed model were enabled as well.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/logs_running.PNG)
 
@@ -49,7 +49,7 @@ SCREENSHOTS OF TASKS ACCOMPLISHED:
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/logs_running_3.PNG)
 
-(6) screenshots of swagger running on local host showing the HTTP API methods and responses for the model
+(6) screenshots of swagger running on local host showing the HTTP API methods and responses for the model. swagger.json file was downloaded using curl command and Swagger URI (of the deployed model). It was ensured that swagger.json, swagger.sh and serve.py were kept in the same folder. swagger.sh was edited using vim command and the port was changed from 80 to 9000. Afterwards, it was run using bash command and Swagger container on port 9000 was opened. serve.py was run using python command in git bash terminal and it started a python server on port 8000. The link is then entered in Swagger container to open the swagger instance for interaction. HTTP API methods and responses were present in the documentation for exploring.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/swagger_1.PNG)
 
@@ -63,37 +63,37 @@ SCREENSHOTS OF TASKS ACCOMPLISHED:
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/swagger_6.PNG)
 
-(7) screenshot of endpoint.py script running against the API producing JSON output from the model.
+(7) screenshot of endpoint.py script running against the API producing JSON output from the model. endpoint.py script was edited using vim command and scoring_uri and key were entered. REST Endpoint of the deployed model was filled in scoring_uri and Primary Key was filled as key. Then, endpoint.py script was run using python command in git bash terminal and data.json file was created.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/endpoint_1.PNG)
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/endpoint_2.PNG)
 
-(8) screenshot of Apache Benchmark (ab) running against the HTTP API using authentication keys to retrieve performance results.
+(8) screenshot of Apache Benchmark (ab) running against the HTTP API using authentication keys to retrieve performance results. benchmark.sh file was edited using vim command and REST Endpoint as well as Primary Key were entered. Then, benchmark.sh file was run using bash command in git bash terminal and performance results were retrieved.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/benchmark.PNG)
 
-(9) screenshot of pipeline section of Azure ML Studio, showing the pipeline has been created.
+(9) screenshot of pipeline section of Azure ML Studio, showing the pipeline has been created. After entering 'experiment_name', 'key' and 'amlcompute_cluster_name', we run the cells in the notebook. Ultimately, a pipeline is created which is available to view in pipeline section of Azure ML Studio.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/ppp111.PNG)
 
-(10) screenshot of pipeline section of Azure ML Studio, showing the pipeline endpoint.
+(10) screenshot of pipeline section of Azure ML Studio, showing the pipeline endpoint. Bankmarketing Train endpoint is created when the pipeline is published and can be observed in the Pipeline Endpoint section in Azure ML Studio.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/ppp222.PNG)
 
-(11) screenshot of Bank Marketing Dataset with the auto-ml module.
+(11) screenshot of Bank Marketing Dataset with the auto-ml module. When we click the endpoint mentioned above, we can see the Bank Marketing Dataset linked with the auto-ml module. This is kind of a visual representation of the pipeline we published.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/ppp333.PNG)
 
-(12) screenshot of 'Published Pipeline Overview' showing a REST Endpoint and a status of ACTIVE.
+(12) screenshot of 'Published Pipeline Overview' showing a REST Endpoint and a status of ACTIVE. REST endpoint is enabled to rerun the pipeline from any HTTP library on any platform.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/ppp444.PNG)
 
-(13) screenshot from Jupyter Notebook, showing that the 'Use RunDetails Widget' shows the step runs.
+(13) screenshot from Jupyter Notebook, showing that the 'Use RunDetails Widget' shows the step runs. RunDetails widget helps in monitoring the progress of pipeline training. It provides updates until training is finished.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/pppp5555.PNG)
 
-(14) screenshots of ML Studio showing the scheduled runs.
+(14) screenshots of ML Studio showing the scheduled runs. auth_header was retrieved and HTTP POST request to the endpoint (to trigger the run) was created specifying the authentication header.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/pppp6666.PNG)
 
@@ -103,7 +103,7 @@ SCREENSHOTS OF TASKS ACCOMPLISHED:
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/pppp9999.PNG)
 
-(15) screenshots of compute instances.
+(15) screenshots of compute instances. To accomplish the above mentioned tasks, low priority compute instances with minimum nodes 1 and maximum nodes 5, were created.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/pppp11110000.PNG)
 
