@@ -1,4 +1,5 @@
 PROJECT OVERVIEW:
+
 The objective of the project was to use Azure to run AutoML Classification task ( without enabling deep learning ) on Bank-Marketing Dataset and then deploy the best model ( i.e. VotingEnsemble in our case with accuracy 0.91775) with "Authentication" enabled using Azure Container Instance ( ACI ) and consume it with the help of endpoint.py script provided ( after modifying scoring_uri and key ).
 (1) The first step of project is 'Authentication' : after ensuring 'az' command is installed 'az login' was used for logging in. Since I was using the lab provided by Udacity, I was not allowed the privileges to create a Service Pricipal which was evident when I ran the command to create one.
 (2) The second step of project was running 'Automated ML Experiment' : after exploring registered 'Bank-Marketing' dataset in Dataset section, a new Automated ML run was created using this dataset. A new compute cluster with machine size of 'Standard_DS3_v2' ( with minimum nodes equal to 1 and maximum nodes equal to 5 ) was also created to run the experiment. The task performed was classification ( without enabling deep learning ).
@@ -10,15 +11,18 @@ The objective of the project was to use Azure to run AutoML Classification task 
 
 
 ARCHITECTURAL DIAGRAM:
+
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/architecural_structure.png)
 
 
 SCOPE OF IMPROVEMENT IN PROJECT IN FUTURE:
+
 (1) Dataset Imbalance : While executing 'Test the Model' section of 'aml-pipelines-with-automated-machine-learning-step.ipynb' python notebook, data imbalance is evident i.e. inputs for one class of labels are way more than the other class of labels. Due to this fact, it can be observed in the confusion matrix that almost 1/3rd of the inputs belonging to the minority class were incorrectly classified. Although Auto-ML has some built-in capabilities to deal with imbalance data we can try something in addition. In order to address this issue, we can try some sampling techniques to balance the number of inputs of both the classes while maintaining the variance. Also, we can try to upscale the minority class or downscale the majority class but keeping in mind that such resampling method will require a proper way to analyze the dataset. Also, use of weight column as input in auto-ml to weight up or down the rows, might be another way to handle imbalance in data. Defining appropriate weight column will result in penalizing the model less for errors made on samples belonging to majority class and also in penalizing the model more for errors made on sample belonging to minority class. Therefore, there is a possibility to achieve a VotingEnsemble Model giving a better classification result on this imbalanced data. 
 Source for answer : https://docs.microsoft.com/en-us/azure/machine-learning/concept-manage-ml-pitfalls
 
 
 SCREENSHOTS OF TASKS ACCOMPLISHED:
+
 (1) screenshot of 'Bank-Marketing' dataset present in 'Registered Dataset' section of Azure ML Studio.
 
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/registered_datasets.PNG)
@@ -104,4 +108,5 @@ SCREENSHOTS OF TASKS ACCOMPLISHED:
 
 LINK TO SCREENCAST VIDEO:
 
+https://youtu.be/zR6OtYgfE3o
 
