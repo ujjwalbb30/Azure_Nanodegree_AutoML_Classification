@@ -10,7 +10,7 @@ The objective of the project was to use Azure to run AutoML Classification task 
 
 
 ARCHITECTURAL DIAGRAM:
-
+![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/architecural_structure.png)
 
 
 SCOPE OF IMPROVEMENT IN PROJECT IN FUTURE:
