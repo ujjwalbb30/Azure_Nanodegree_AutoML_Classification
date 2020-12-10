@@ -12,6 +12,8 @@ The objective of the project was to use Azure to run AutoML Classification task 
 
 ARCHITECTURAL DIAGRAM:
 
+I have created the following architectural diagram with the help of Adobe Photoshop.
+
 ![alt text](https://github.com/ujjwalbb30/nd00333_AZMLND_C2/blob/master/architecural_structure.png)
 
 
