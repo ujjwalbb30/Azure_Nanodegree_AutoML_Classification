@@ -1,12 +1,19 @@
 PROJECT OVERVIEW:
 
 The objective of the project was to use Azure to run AutoML Classification task ( without enabling deep learning ) on Bank-Marketing Dataset and then deploy the best model ( i.e. VotingEnsemble in our case with accuracy 0.91775) with "Authentication" enabled using Azure Container Instance ( ACI ) and consume it with the help of endpoint.py script provided ( after modifying scoring_uri and key ).
+
 (1) The first step of project is 'Authentication' : after ensuring 'az' command is installed 'az login' was used for logging in. Since I was using the lab provided by Udacity, I was not allowed the privileges to create a Service Pricipal which was evident when I ran the command to create one.
+
 (2) The second step of project was running 'Automated ML Experiment' : after exploring registered 'Bank-Marketing' dataset in Dataset section, a new Automated ML run was created using this dataset. A new compute cluster with machine size of 'Standard_DS3_v2' ( with minimum nodes equal to 1 and maximum nodes equal to 5 ) was also created to run the experiment. The task performed was classification ( without enabling deep learning ).
-(3) The third step of project was to 'Deploy the Best Model' : The experiment produced VotingEnsemble as the best model with accuracy score being 0.91775. It was then deployed using Azure Container Instance ( ACI ) with 'Authentication' enabled. The check box for 'enabling Application Insights' will be left untouched during deployment.
+
+(3) The third step of project was to 'Deploy the Best Model' : The experiment produced VotingEnsemble as the best model with accuracy score being 0.91775. It was then deployed using Azure Container Instance ( ACI ) with 'Authentication' enabled. The check box for 'enabling Application Insights' was left untouched during deployment. The successful deployment of a model is notified by Azure ML and can be found in Enpoints section of Azure ML Studio for consumption.
+
 (4) The fourth step of project was to 'Enable logging' : After downloading config.json file and saving it in the same folder as logs.py, logs.py script was edited using vim command in git bash terminal. After necessary edits, it was run using python command and the 'Application Insights Enabled' was observed to be 'True'.
+
 (5) The fifth step of project was to use 'Swagger Documentation' : swagger.json file was downloaded using curl command and put in the same folder as swagger.sh and serve.py file. Necessary editing was done in swagger.sh and serve.py file using vim command and then both of them were run in the terminal using bash and python command respectively.
+
 (6) The sixth step of project was to 'Consume Model Endpoints' : After editing endpoint.py script using vim command and entering scoring_uri and key, we run the endpoint.py script using python command. after ensuring ab commands are installed, edited the benchmark.sh file using vim command and then it was run using bash command in the terminal.
+
 (7) The seventh and final step of project was to 'Create and Publish a Pipeline' : After editing the 'aml-pipelines-with-automated-machine-learning-step.ipynb' python notebook, all the cells were run and pipeline was published. 
 
 
@@ -110,5 +117,5 @@ SCREENSHOTS OF TASKS ACCOMPLISHED:
 
 LINK TO SCREENCAST VIDEO:
 
-https://youtu.be/zR6OtYgfE3o
+https://youtu.be/1x711ricyGQ
 
